@@ -1,0 +1,100 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("./assets/js-clock-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.clock-face {
+  width: 300px;
+  height: 300px;
+  border: 8px solid cyan;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  background: rgba(0, 200, 255, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 100px rgba(0, 200, 255, 0.8);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  animation: pulsating-glow 3s infinite, pulsating-border 3s infinite;
+}
+
+@keyframes pulsating-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 100px rgba(0, 200, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 200px rgba(0, 200, 255, 0.8);
+  }
+}
+
+@keyframes pulsating-border {
+  0%,
+  100% {
+    border-color: rgba(0, 200, 255, 0.5);
+  }
+  50% {
+    border-color: rgba(0, 200, 255, 1);
+  }
+}
+
+.center {
+  background: cyan;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  z-index: 100;
+  transform: translateY(3px);
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.second-hand {
+  background: linear-gradient(to left, red 70%, transparent);
+  opacity: 0.66;
+  border-radius: 10px;
+  width: 50%;
+  height: 2px;
+}
+
+.minute-hand {
+  background: linear-gradient(to left, ghostwhite 70%, transparent);
+  height: 3px;
+  border-radius: 10px;
+}
+
+.hour-hand {
+  background: linear-gradient(to left, grey 5%, transparent);
+  height: 6px;
+}
