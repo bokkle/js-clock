@@ -2,10 +2,6 @@ const secondHand = document.querySelector(".second-hand");
 const minuteHand = document.querySelector(".minute-hand");
 const hourHand = document.querySelector(".hour-hand");
 
-const secondHand = document.querySelector(".second-hand");
-const minuteHand = document.querySelector(".minute-hand");
-const hourHand = document.querySelector(".hour-hand");
-
 const setDate = () => {
   const now = new Date();
   const seconds = now.getSeconds();
